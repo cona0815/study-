@@ -1,0 +1,11 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# 這段設定對於 React SPA 很重要
+# 它確保當使用者重新整理頁面或直接存取特定路徑時，會導回 index.html 讓 React 處理路由
+# 避免出現 404 錯誤
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
